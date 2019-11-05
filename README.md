@@ -1,5 +1,7 @@
 # bombino
 
+### Rebuild of generators [cep-vue-cli](https://github.com/Inventsable/generator-cep-vue-cli) and [cep-quasar-cli](https://github.com/Inventsable/generator-cep-quasar-cli)
+
 [![NPM](https://nodei.co/npm/bombino.png)](https://nodei.co/npm/bombino/)
 
 Supercharged Adobe CEP panel generator for Vue with dynamic template support for Vue-CLI and Quasar-CLI.
