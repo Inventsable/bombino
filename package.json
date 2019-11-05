@@ -1,0 +1,24 @@
+{
+  "name": "bombino",
+  "version": "1.0.0",
+  "description": "CLI generator for Adobe CEP panels with topshelf Vue build systems",
+  "main": "./bin/index.js",
+  "preferGlobal": true,
+  "bin": {
+    "bombino": "./bin/index.js"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "Thomas Scharstein II <tom@inventsable.cc>",
+  "license": "ISC",
+  "dependencies": {
+    "chalk": "^2.4.2",
+    "download-git-repo": "^3.0.2",
+    "fs-extra": "^8.1.0",
+    "inquirer": "^7.0.0",
+    "ora": "^4.0.2",
+    "shelljs": "^0.8.3"
+  }
+}
