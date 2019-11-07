@@ -12,6 +12,6 @@ async function init() {
     : (await !answers.isLocal)
     ? bombino.createPanelFromGitTemplate(answers)
     : bombino.createPanelFromLocalTemplate(answers);
-  return await bombino.end();
+  // return await bombino.end();
 }
 init();
