@@ -20,6 +20,7 @@ Then generate your new project:
 # Recommended inside ../AppData/Roaming/CEP/extensions
 bombino
 
+# Prompt for action (create panel or create template)
 # Prompt for build system (Vue-CLI / Quasar-CLI)
 # Prompt for name
 # Prompt for template

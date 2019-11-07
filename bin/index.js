@@ -9,7 +9,9 @@ async function init() {
   // Should determine if write new panel or template here
   let result = answers.isTemplate
     ? await bombino.createNewTemplate(answers)
-    : await bombino.createPanelFromTemplate(answers);
+    : (await !answers.isLocal)
+    ? bombino.createPanelFromGitTemplate(answers)
+    : bombino.createPanelFromLocalTemplate(answers);
   return await bombino.end();
 }
 init();
