@@ -10,6 +10,7 @@ async function init() {
 
   if (/panel|template/.test(action)) {
     let answers = await bombino.promptCreateTemplateOrPanel(action);
+    // console.log("!!! Fired");
     let result = answers.isTemplate
       ? await bombino.createNewTemplate(answers)
       : (await !answers.isLocal)
