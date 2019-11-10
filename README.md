@@ -91,7 +91,7 @@ Each template comes with 5 commands baked in ([see details here](https://github.
 
 Upon creating a new panel or template, a localized `.bombino` (JSON) file is created to store your settings. This controls all the logic used to find, modify, replace and update your data. The structure is:
 
-```json
+```js
 {
   // Custom or default tooling, only used to define where the target files are relative to your project.
   // [model-name]: {
