@@ -1,6 +1,6 @@
 {
   "name": "bombino",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "description": "CLI generator for Adobe CEP panels with topshelf Vue build systems",
   "main": "./bin/index.js",
   "preferGlobal": true,
@@ -20,6 +20,7 @@
   "license": "MIT",
   "repository": "Inventsable/bombino",
   "dependencies": {
+    "boxen": "^4.1.0",
     "chalk": "^2.4.2",
     "dotenv": "^8.2.0",
     "download-git-repo": "^3.0.2",
