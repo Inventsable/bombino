@@ -11,11 +11,15 @@ async function init() {
   if (/panel|template/.test(action)) {
     let answers = await bombino.promptCreateTemplateOrPanel(action);
     // console.log("!!! Fired");
-    let result = answers.isTemplate
-      ? await bombino.createNewTemplate(answers)
-      : (await !answers.isLocal)
-      ? bombino.createPanelFromGitTemplate(answers)
-      : bombino.createPanelFromLocalTemplate(answers);
+    let result;
+
+    if (answers.isTemplate) {
+      result = await bombino.createNewTemplate(answers);
+    } else {
+      result = (await !answers.isLocal)
+        ? bombino.createPanelFromGitTemplate(answers)
+        : bombino.createPanelFromLocalTemplate(answers);
+    }
   } else if (/utils/.test(action)) {
     console.log("Open utils");
   } else if (/config/.test(action)) {
