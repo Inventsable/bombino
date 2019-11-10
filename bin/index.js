@@ -23,7 +23,8 @@ async function init() {
   } else if (/utils/.test(action)) {
     console.log("Open utils");
   } else if (/config/.test(action)) {
-    console.log("Open config editor");
+    let result = await bombino.changeConfig();
+    // console.log("Open config editor");
   }
 
   // return await bombino.end();
