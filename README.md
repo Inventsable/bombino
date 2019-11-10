@@ -1,10 +1,12 @@
 # bombino
 
-### Rebuild of generators [cep-vue-cli](https://github.com/Inventsable/generator-cep-vue-cli) and [cep-quasar-cli](https://github.com/Inventsable/generator-cep-quasar-cli)
-
 [![NPM](https://nodei.co/npm/bombino.png)](https://nodei.co/npm/bombino/)
 
-Supercharged Adobe CEP panel generator for nodeJS + Vue projects with dynamic template support for Vue-CLI and Quasar-CLI, or configurable custom tooling presets
+| [Installation](#installation) | [Create Panel](#create-panel) | [Create Template](#create-template) | [Templates](#templates) | [Commands](#commands) | [Config](#config) |
+| ----------------------------- | :---------------------------: | :---------------------------------: | :---------------------: | :-------------------: | :---------------: |
+
+
+Supercharged rebuild of generators [cep-vue-cli](https://github.com/Inventsable/generator-cep-vue-cli) and [cep-quasar-cli](https://github.com/Inventsable/generator-cep-quasar-cli) for creating Adobe CEP panel with nodeJS + Vue, includes dynamic template support for Vue-CLI and Quasar-CLI, cloud or private local repositories, and configurable custom tooling presets (user-defined path locations).
 
 ## Installation
 
@@ -24,7 +26,7 @@ bombino
 
 ---
 
-## Create a new Panel
+## Create Panel
 
 Generate a new panel from local or cloud-based templates in just a few seconds:
 
@@ -34,7 +36,7 @@ If no local templates are found in config, cloud templates are automatically sel
 
 > Note that multiple Inquirer.js instantiations in a Promise chain are [known to cause graphical errors](https://github.com/SBoudrias/Inquirer.js/issues/811) -- if you select Bombino default templates and reach the "Want to use the \_\_\_\_ template" or "Select a template" screen, you may need to press Enter before Inquirer receives input. Trying to fix this
 
-## Create a new Template
+## Create Template
 
 Take any valid panel and turn it into a usable template, prompting to save to the Create a new Template list in command:
 
@@ -48,7 +50,7 @@ Coming soon
 
 ---
 
-## Cloud Templates
+## Templates
 
 See more information about usage:
 
@@ -78,10 +80,96 @@ Each template comes with 5 commands baked in ([see details here](https://github.
 - `npm run register` - Reports the current user data (if any) and prompts to save new info to be used in certificates.
 - `npm run sign` - Automatically stages and signs the extension, placing it in a `./archive` directory within the current panel.
 
-## Extras and Add-ons
+## Extras
 
 - [starlette](https://github.com/Inventsable/starlette) _(Shipped in all templates)_ - Color and theming engine that handles all host app colors and exposes them as reactive CSS variables to save you the need to do any theme or color logic yourself.
 - [leylo](https://github.com/Inventsable/leylo) - Library to integrate a Firebase backend into any panel with a single command and line of code, providing over 40 CRUD actions for Firestore database.
+
+---
+
+## Config
+
+Upon creating a new panel or template, a localized `.bombino` (JSON) file is created to store your settings. This controls all the logic used to find, modify, replace and update your data. The structure is:
+
+```json
+{
+  // Custom or default tooling, only used to define where the target files are relative to your project.
+  // [model-name]: {
+  "VUE": {
+    "paths": {
+      // These are the locations of files which should be targeted for PLACEHOLDER injection
+      // [key]: [relative-path],
+      "index": "./public/index.html",
+      "manifest": "./CSXS/manifest.xml"
+      // etc. Note that "relative" is to the template, not the parent folder launching bombino
+    }
+  },
+  // Models are an array of tooling systems (default Vue-CLI and Quasar-CLI). New toolings with specific needs/file-paths can be added here
+  "_MODELS": [
+    {
+      // name: string associated with above [model-name] (must be exact)
+      "name": "VUE",
+      // label: description to show on prompts of which tooling to use
+      "label": "Vue-CLI",
+      // placeholders: currently unused, strict cap on which placeholders
+      "placeholders": ["name", "title", "hostlist", "hostlist_debug"],
+      // exclusive: if this file exists in a repo, know it must be this tooling.
+      // This is used to auto-suggest tooling rather than prompt every time.
+      "exclusive": "./vue.config.js",
+      // isCustom: boolean for whether or not this was a user-generated template
+      "isCustom": false
+    }
+  ],
+  // Any user-generated templates to prompt as LOCAL
+  "_TEMPLATES": [
+    {
+      // index: used for sorting to display in list (lower numbers at top)
+      "index": 0,
+      // name: unique string associated with this template folder
+      "name": "bombino-vue-test",
+      // label: Description to show in brackets after name within prompts
+      "label": "sample Vue",
+      // path: if from a private directory, provide the absolute path for download
+      "path": "C:\\Users\\TRSch\\AppData\\Roaming\\Adobe\\CEP\\extensions\\bombino-vue-test",
+      // model: exact key to match above tooling schema
+      "model": "VUE",
+      // gitURL: if from a GitHub repo, provide [user]/[repo] for download
+      "gitURL": null
+    }
+  ],
+  //
+  "_OPTIONS": {
+    // dirty: Boolean, if false then this config is the default and hasn't been changed by user.
+    "dirty": true,
+    // Add a quick prompt for using the last template again (skipping multiple prompts)
+    "lastTemplate": "my-custom-template"
+    // more to come
+  },
+  //
+  "_PLACEHOLDERS": {
+    "name": {
+      // value: what to search for or inject. If creating a panel, search for this value.
+      // If creating a template, inject this value
+      "value": "$BOMBINO_NAME$",
+      // templateRX: RegExp to use for combing template if creating a panel
+      "templateRX": "/\\$BOMBINO_NAME\\$/gm",
+      // settingsKey: exact match of key-value pair within prompt answers, giving value to replace PLACEHOLDER
+      "settingsKey": "extName",
+      // panelRX: file-specific RegExp to find user-content and replace it with a PLACEHOLDER.
+      "panelRX": {
+        // Note that keys match the root-level [model-name].paths tooling object
+        "manifest": "/\\<Extension\\sId\\=\\\"([\\w|\\.|\\-]*)\\\"/gm",
+        // RegExp must be contained in string (as they have no JSON support)
+        "index": "/\\<title\\>(.*)\\<\\/title\\>/",
+        // The content to replace must be in the First Capture Group (within round brackets)
+        "dev": "/\\<title\\>(.*)\\<\\/title\\>/"
+      },
+      // If this is a static value, you can add optional parameter here to control the injected value (replacing $BOMBINO_NAME$):
+      "override": "<%= htmlWebpackPlugin.options.productName %>"
+    }
+  }
+}
+```
 
 ---
 
