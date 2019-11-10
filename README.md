@@ -4,9 +4,7 @@
 
 [![NPM](https://nodei.co/npm/bombino.png)](https://nodei.co/npm/bombino/)
 
-Supercharged Adobe CEP panel generator for Vue with dynamic template support for Vue-CLI and Quasar-CLI.
-
-![](https://thumbs.gfycat.com/PiercingDizzyImperialeagle-size_restricted.gif)
+Supercharged Adobe CEP panel generator for nodeJS + Vue projects with dynamic template support for Vue-CLI and Quasar-CLI, or configurable custom tooling presets
 
 ## Installation
 
@@ -20,35 +18,55 @@ Then generate your new project:
 # Recommended inside ../AppData/Roaming/CEP/extensions
 bombino
 
-# Prompt for action (create panel or create template)
-# Prompt for build system (Vue-CLI / Quasar-CLI)
-# Prompt for name
-# Prompt for template
-# Prompt for Adobe apps to be included in manifest and typescript
-# Prompt for localhost port
+# > Prompt to create a new panel from template
+# > Prompt to create a new template from panel
 ```
 
 ---
 
-## Templates
+## Create a new Panel
+
+Generate a new panel from local or cloud-based templates in just a few seconds:
+
+![](https://thumbs.gfycat.com/BestConfusedCow-size_restricted.gif)
+
+Settings are very similar to [generator-cep-vue-cli](https://github.com/Inventsable/generator-cep-vue-cli), but are far more versatile and dynamic in how they're applied, now supporting any Github link (queried on launch, not hardcoded) or any private folder on your own machine.
+
+> Note that multiple Inquirer.js instantiations in a Promise chain are [known to cause graphical errors](https://github.com/SBoudrias/Inquirer.js/issues/811) -- if you select Bombino default templates and reach the "Want to use the \_\_\_\_ template" or "Select a template" screen, you may need to press Enter before Inquirer receives input. Trying to fix this
+
+## Create a new Template
+
+Take any valid panel and turn it into a usable template, prompting to save to the Create a new Template list in command:
+
+![](https://thumbs.gfycat.com/PointedAgileBarb-size_restricted.gif)
+
+This data is saved locally within a `.bombino` json config file, supporting the ability to customize relative path location to files alongside placeholder value and RegExp detection depending on your specific needs or tooling preset.
+
+## Customize config
+
+Coming soon
+
+---
+
+## Cloud Templates
 
 See more information about usage:
 
 ### Vue-CLI
 
-- [Bare](https://github.com/Inventsable/cep-vue-cli-bare3x) (No extras)
-- [Basic](https://github.com/Inventsable/cep-vue-cli-basic3x) (Barebones with utility components)
-- [Router](https://github.com/Inventsable/cep-vue-cli-router3x) (Basic + Vue Router)
-- [Vuetify](https://github.com/Inventsable/cep-vue-cli-plus3x) (Vuetify, Router, Lottie, Modal Dialogs)
+- [Bare](https://github.com/Inventsable/bombino-vue-bare) (No extras)
+- [Basic](https://github.com/Inventsable/bombino-vue-basic) (Barebones with utility components)
+- [Router](https://github.com/Inventsable/bombino-vue-router) (Basic + Vue Router)
+- [Vuetify](https://github.com/Inventsable/bombino-vue-plus) (Vuetify, Router, Lottie, Modal Dialogs)
 - ~~[Quasar]() (Quasar, Router, Modal Dialogs)~~
 - ~~[Buefy]() (Bulma, Router, Modal Dialogs)~~
 - ~~[Bootstrap]() (Bootstrap, Router, Modal Dialogs)~~
 
 ### Quasar-CLI
 
-- [Plus](https://github.com/Inventsable/cep-quasar-cli-plus) (Vuex, Router, Lottie, Modal Dialogs)
-- ~~[Bare](https://github.com/Inventsable/cep-quasar-cli-bare) (No extras)~~
-- ~~[Basic](https://github.com/Inventsable/cep-quasar-cli-basic) (Barebones with utility components)~~
+- [Plus](https://github.com/Inventsable/bombino-quasar-plus) (Vuex, Router, Lottie, Modal Dialogs)
+- ~~[Bare](https://github.com/Inventsable/bombino-quasar-bare) (No extras)~~
+- ~~[Basic](https://github.com/Inventsable/bombino-quasar-basic) (Barebones with utility components)~~
 
 ## Commands
 
