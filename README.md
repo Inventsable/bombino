@@ -30,7 +30,7 @@ Generate a new panel from local or cloud-based templates in just a few seconds:
 
 ![](https://thumbs.gfycat.com/BestConfusedCow-size_restricted.gif)
 
-Settings are very similar to [generator-cep-vue-cli](https://github.com/Inventsable/generator-cep-vue-cli), but are far more versatile and dynamic in how they're applied, now supporting any Github link (queried on launch, not hardcoded) or any private folder on your own machine.
+If no local templates are found in config, cloud templates are automatically selected. Settings are very similar to [generator-cep-vue-cli](https://github.com/Inventsable/generator-cep-vue-cli), but are far more versatile and dynamic in how they're applied, now supporting any Github link (queried on launch, not hardcoded) or any private folder on your own machine.
 
 > Note that multiple Inquirer.js instantiations in a Promise chain are [known to cause graphical errors](https://github.com/SBoudrias/Inquirer.js/issues/811) -- if you select Bombino default templates and reach the "Want to use the \_\_\_\_ template" or "Select a template" screen, you may need to press Enter before Inquirer receives input. Trying to fix this
 
