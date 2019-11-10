@@ -38,7 +38,7 @@ If no local templates are found in config, cloud templates are automatically sel
 
 ## Create Template
 
-Take any valid panel and turn it into a usable template, prompting to save to the Create a new Template list in command:
+Take any valid panel and turn it into a usable template, prompting to save to the Create a new Template list in command. This should be used on the parent folder of the template, and will prompt to create a template of any child:
 
 ![](https://thumbs.gfycat.com/PointedAgileBarb-size_restricted.gif)
 
