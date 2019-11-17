@@ -83,6 +83,7 @@ Each template comes with 5 commands baked in ([see details here](https://github.
 ## Extras
 
 - [starlette](https://github.com/Inventsable/starlette) _(Shipped in all templates)_ - Color and theming engine that handles all host app colors and exposes them as reactive CSS variables to save you the need to do any theme or color logic yourself.
+- [cep-spy](https://github.com/Inventsable/CEP-Spy) _(Shipped in all templates)_ - Lightweight, no dependency utility for revealing all information about the current host app, current panel, environment and even sibling CEP extensions.
 - [leylo](https://github.com/Inventsable/leylo) - Library to integrate a Firebase backend into any panel with a single command and line of code, providing over 40 CRUD actions for Firestore database.
 
 ---
