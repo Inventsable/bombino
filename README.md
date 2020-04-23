@@ -55,7 +55,7 @@ See more information about usage:
 - [Bare](https://github.com/Inventsable/bombino-vue-bare) (No extras)
 - [Basic](https://github.com/Inventsable/bombino-vue-basic) (Barebones with utility components)
 - [Router](https://github.com/Inventsable/bombino-vue-router) (Basic + Vue Router)
-- [Vuetify](https://github.com/Inventsable/bombino-vue-plus) (Vuetify, Router, Lottie, Modal Dialogs)
+- [Vuetify](https://github.com/Inventsable/bombino-vue-vuetify) (Vuetify, Router, Lottie, Modal Dialogs)
 - [Brutalism Basic](https://github.com/Inventsable/bombino-brutalism-basic) (Brutalism + Utilities)
 - [Brutalism Router](https://github.com/Inventsable/bombino-brutalism-router) (Brutalism, Router + Utilities)
 
