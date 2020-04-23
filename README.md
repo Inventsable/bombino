@@ -79,6 +79,7 @@ Each template comes with 5 commands baked in ([see details here](https://github.
 
 - [starlette](https://github.com/Inventsable/starlette) _(Shipped in all templates)_ - Color and theming engine that handles all host app colors and exposes them as reactive CSS variables to save you the need to do any theme or color logic yourself.
 - [cep-spy](https://github.com/Inventsable/CEP-Spy) _(Shipped in all templates)_ - Lightweight, no dependency utility for revealing all information about the current host app, current panel, environment and even sibling CEP extensions.
+- [lokney](https://github.com/Inventsable/CEP-Spy) _(Shipped in all templates)_ - Universal `<Panel>` and `<Menu>` utility components to greatly simplify the overhead of Adobe-specific extensions.
 - [cluecumber](https://github.com/Inventsable/cluecumber) _(Shipped in all templates)_ - Browser-friendly utilities for using CSInterface, opening links, async evalScript, and more.
 - [brutalism](https://github.com/Inventsable/brutalism) - Battleaxe's component library for Adobe CEP panels.
 - [panelify](https://github.com/Inventsable/panelify) - Vue component to create a browser wrapper of any style Adobe host for your extension
