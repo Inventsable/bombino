@@ -82,6 +82,7 @@ Each template comes with 5 commands baked in ([see details here](https://github.
 - [cluecumber](https://github.com/Inventsable/cluecumber) _(Shipped in all templates)_ - Browser-friendly utilities for using CSInterface, opening links, async evalScript, and more.
 - [brutalism](https://github.com/Inventsable/brutalism) - Battleaxe's component library for Adobe CEP panels.
 - [panelify](https://github.com/Inventsable/panelify) - Vue component to create a browser wrapper of any style Adobe host for your extension
+- [scriptopia](https://github.com/Inventsable/scriptopia) _(Already taken care of in bombino templates)_ - Generate Typescript support for any compatible Adobe app
 - [leylo](https://github.com/Inventsable/leylo) - Library to integrate a Firebase backend into any panel with a single command and line of code, providing over 40 CRUD actions for Firestore database.
 
 ---
