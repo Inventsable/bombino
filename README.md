@@ -61,9 +61,9 @@ See more information about usage:
 
 ### Quasar-CLI
 
+- [Panelify](https://github.com/Inventsable/bombino-quasar-panelify) (Vuex, Router, Browser Compatible)
 - [Plus](https://github.com/Inventsable/bombino-quasar-plus) (Vuex, Router, Lottie, Modal Dialogs)
-- ~~[Bare](https://github.com/Inventsable/bombino-quasar-bare) (No extras)~~
-- ~~[Basic](https://github.com/Inventsable/bombino-quasar-basic) (Barebones with utility components)~~
+- [Slim](https://github.com/Inventsable/bombino-quasar-slim) (Modified Plus template with slim style)
 
 ## Commands
 
