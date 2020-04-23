@@ -44,10 +44,6 @@ Take any valid panel and turn it into a usable template, prompting to save to th
 
 This data is saved locally within a `.bombino` json config file, supporting the ability to customize relative path location to files alongside placeholder value and RegExp detection depending on your specific needs or tooling preset.
 
-## Customize config
-
-Coming soon
-
 ---
 
 ## Templates
@@ -60,9 +56,8 @@ See more information about usage:
 - [Basic](https://github.com/Inventsable/bombino-vue-basic) (Barebones with utility components)
 - [Router](https://github.com/Inventsable/bombino-vue-router) (Basic + Vue Router)
 - [Vuetify](https://github.com/Inventsable/bombino-vue-plus) (Vuetify, Router, Lottie, Modal Dialogs)
-- ~~[Quasar]() (Quasar, Router, Modal Dialogs)~~
-- ~~[Buefy]() (Bulma, Router, Modal Dialogs)~~
-- ~~[Bootstrap]() (Bootstrap, Router, Modal Dialogs)~~
+- [Brutalism Basic](https://github.com/Inventsable/bombino-brutalism-basic) (Brutalism + Utilities)
+- [Brutalism Router](https://github.com/Inventsable/bombino-brutalism-router) (Brutalism, Router + Utilities)
 
 ### Quasar-CLI
 
@@ -72,7 +67,7 @@ See more information about usage:
 
 ## Commands
 
-Each template comes with 5 commands baked in ([see details here](https://github.com/Inventsable/CEP-Self-Signing-Panel#what-do-they-do)):
+Each template comes with 5 commands baked in ([see details here](https://github.com/Inventsable/bombino-commands#commands-will-update-for-bombino-soon)):
 
 - `npm run help` - A full list of the commands available and descriptions.
 - `npm run switch` - Reports whether in developer or production context and can switch automatically.
@@ -84,6 +79,9 @@ Each template comes with 5 commands baked in ([see details here](https://github.
 
 - [starlette](https://github.com/Inventsable/starlette) _(Shipped in all templates)_ - Color and theming engine that handles all host app colors and exposes them as reactive CSS variables to save you the need to do any theme or color logic yourself.
 - [cep-spy](https://github.com/Inventsable/CEP-Spy) _(Shipped in all templates)_ - Lightweight, no dependency utility for revealing all information about the current host app, current panel, environment and even sibling CEP extensions.
+- [cluecumber](https://github.com/Inventsable/cluecumber) _(Shipped in all templates)_ - Browser-friendly utilities for using CSInterface, opening links, async evalScript, and more.
+- [brutalism](https://github.com/Inventsable/brutalism) - Battleaxe's component library for Adobe CEP panels.
+- [panelify](https://github.com/Inventsable/panelify) - Vue component to create a browser wrapper of any style Adobe host for your extension
 - [leylo](https://github.com/Inventsable/leylo) - Library to integrate a Firebase backend into any panel with a single command and line of code, providing over 40 CRUD actions for Firestore database.
 
 ---
