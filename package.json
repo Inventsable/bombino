@@ -1,6 +1,6 @@
 {
   "name": "bombino",
-  "version": "1.1.22",
+  "version": "1.2.0",
   "description": "CLI generator for Adobe CEP panels with topshelf Vue build systems",
   "main": "./bin/index.js",
   "preferGlobal": true,
