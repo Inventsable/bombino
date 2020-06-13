@@ -18,6 +18,8 @@ async function init() {
     } else {
       result = (await !answers.isLocal)
         ? bombino.createPanelFromGitTemplate(answers)
+        : (await !answers.isStatic)
+        ? bombino.createPanelFromGitTemplate(answers)
         : bombino.createPanelFromLocalTemplate(answers);
     }
   } else if (/utils/.test(action)) {
