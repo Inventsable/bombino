@@ -2,33 +2,26 @@
 
 [![NPM](https://nodei.co/npm/bombino.png)](https://nodei.co/npm/bombino/)
 
-| [Installation](#installation) | [Create Panel](#create-panel) | [Create Template](#create-template) | [Templates](#templates) | [Commands](#commands) | [Config](#config) |
+| [Get Started](#get-started) | [Create Panel](#create-panel) | [Create Template](#create-template) | [Templates](#templates) | [Commands](#commands) | [Config](#config) |
 | ----------------------------- | :---------------------------: | :---------------------------------: | :---------------------: | :-------------------: | :---------------: |
 
 
 Supercharged rebuild of generators [cep-vue-cli](https://github.com/Inventsable/generator-cep-vue-cli) and [cep-quasar-cli](https://github.com/Inventsable/generator-cep-quasar-cli) for creating Adobe CEP panel with nodeJS + Vue, includes dynamic template support for Vue-CLI and Quasar-CLI, cloud or private local repositories, and configurable custom tooling presets (user-defined path locations).
 
-## Installation
+## Get Started
+
+Install globally using `npm i -g bombino` then generate your new project and by running `bombino`. 
+
+Or, you may skip installation and generate a project via `npx` with `npx bombino`.
+
+It is recommended that you generate your project within a valid CEP extension folder in order to access the panel in your host application:
 
 ```bash
-npm install -g bombino
+# Windows: C:\Users\<USERNAME>\AppData\Roaming\CEP\extensions
+# macOS: ~/Library⁩/Application Support/Adobe/⁨CEP⁩/extensions
 ```
 
-Then generate your new project:
-
-```bash
-# Recommended inside ../AppData/Roaming/CEP/extensions
-bombino
-
-# > Prompt to create a new panel from template
-# > Prompt to create a new template from panel
-```
-
-Skip installation and invocation for a single command:
-
-```bash
-npx bombino
-```
+⚠️ If this is your first time developing a CEP panel you may need to bypass the extension signatures check by [editing the CSXS preference properties file](https://github.com/Adobe-CEP/CEP-Resources/blob/master/CEP_10.x/Documentation/CEP%2010.0%20HTML%20Extension%20Cookbook.md#debugging-unsigned-extensions) in order to open the extension in the host application. Be sure to edit the correct properties file according to the CEP version of your host application.
 
 ---
 
